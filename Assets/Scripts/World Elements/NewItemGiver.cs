@@ -18,17 +18,21 @@ public class NewItemGiver : MonoBehaviour {
     public bool giveBlasterDamagePlus = false;
 
     //Saving Stuff
-    public int itemGiverId; //used for saving which item booths have been used.
+    public int myId; //used for saving which item booths have been used.
     public bool itemGiverUsed = false;
 
+    void Update() {
+        itemGiverUsed = Game.control.savedItemGet[myId];
+    }
 
 
-
-    void OnTriggerEnter(Collider2D col) {
-        if ( (col.CompareTag("Player")) && (!itemGiverUsed) ) {
+    void OnTriggerEnter2D(Collider2D col) {
+        if ( col.CompareTag("Player") && !itemGiverUsed ) {
 
             itemGiverUsed = true;
             Debug.Log("GOT ITEM");
+            Game.control.GotItem(this.myId);
+            
         }
     }
 }

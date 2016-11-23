@@ -41,9 +41,6 @@ public class LevelManager : MonoBehaviour {
         //Where is the player?
         roomNumber = new Vector2(0,0); // New game start location
         roomNumberCheckpointLast = roomNumber;
-
-
-
 	}
 	
 	// Update is called once per frame

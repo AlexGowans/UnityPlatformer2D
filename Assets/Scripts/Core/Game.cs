@@ -18,10 +18,10 @@ public class Game : MonoBehaviour {
     public float savedPosY;
     [HideInInspector]
     public float savedPosZ;
-    
-    public Scene savedScene;
-
+    [HideInInspector]
     public int savedGravDir;
+    [HideInInspector]
+    public bool[] savedItemGet;
 
     public bool loadingGame = false;
 
@@ -51,6 +51,10 @@ public class Game : MonoBehaviour {
         data.savedPosY = savedPosY;
         data.savedPosZ = savedPosZ;
         data.savedGravDir = savedGravDir;
+        for (int i = 0; i < savedItemGet.Length; i++) {
+            data.savedItemGet[i] = savedItemGet[i];
+        }
+
 
         bf.Serialize(file, data);
         file.Close();
@@ -71,6 +75,10 @@ public class Game : MonoBehaviour {
             savedPosY = data.savedPosY;
             savedPosZ = data.savedPosZ;
             savedGravDir = data.savedGravDir;
+            for (int i = 0; i <data.savedItemGet.Length; i++)
+            {
+                savedItemGet[i] = data.savedItemGet[i];
+            }
 
             loadingGame = true;
 
@@ -79,14 +87,16 @@ public class Game : MonoBehaviour {
     }
 
 
-
-
     void GetCheckpointPos() { //So that we save a var not a gameobject
         if (savedCheckpoint != null) {
             savedPosX = savedCheckpoint.transform.position.x;
             savedPosY = savedCheckpoint.transform.position.y;
             savedPosZ = savedCheckpoint.transform.position.z;
         }
+    }
+
+    public void GotItem(int id) {
+        savedItemGet[id] = true;
     }
     
 }
@@ -99,5 +109,5 @@ class PlayerData {
 
     public int savedGravDir;
 
-    
+    public bool[] savedItemGet;
 }
