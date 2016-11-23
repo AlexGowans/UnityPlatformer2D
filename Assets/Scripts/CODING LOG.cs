@@ -17,6 +17,9 @@
 
     re did all the animations cos i fucked up by editing the sprite sheet
 
+    23rd
+    working on the item giver, cant get it to save to an array
+
 
 
 */
