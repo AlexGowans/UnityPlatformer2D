@@ -1,0 +1,5 @@
+Hello this is to test commands
+/killPlayer
+DId it work?
+Maybe.
+/position player

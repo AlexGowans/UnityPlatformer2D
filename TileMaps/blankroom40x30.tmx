@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="320" height="240" tilewidth="16" tileheight="16" nextobjectid="22">
+ <tileset firstgid="1" name="BlueTestTileSheetxcf" tilewidth="16" tileheight="16" tilecount="100" columns="10">
+  <image source="BlueTestTileSheetxcf.png" width="160" height="160"/>
+  <terraintypes>
+   <terrain name="blue terrain" tile="-1"/>
+  </terraintypes>
+  <tile id="0" terrain="0,0,0,">
+   <objectgroup draworder="index">
+    <object id="1" type="Terrain" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="1" terrain="0,0,,">
+   <objectgroup draworder="index">
+    <object id="1" type="Terrain" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="2" terrain="0,0,,0">
+   <objectgroup draworder="index">
+    <object id="1" type="Terrain" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="10" terrain="0,,0,">
+   <objectgroup draworder="index">
+    <object id="1" type="Terrain" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="11" terrain="0,0,0,0">
+   <objectgroup draworder="index">
+    <object id="1" type="Terrain" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="12" terrain=",0,,0">
+   <objectgroup draworder="index">
+    <object id="1" type="Terrain" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="20" terrain="0,,0,0">
+   <objectgroup draworder="index">
+    <object id="1" type="Terrain" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="21" terrain=",,0,0">
+   <objectgroup draworder="index">
+    <object id="1" type="Terrain" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="22" terrain=",0,0,0">
+   <objectgroup draworder="index">
+    <object id="1" type="Terrain" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="36">
+   <objectgroup draworder="index">
+    <object id="1" type="KillPlayer" x="0.9375" y="14.9375">
+     <polygon points="0,0 7,-13 14.125,0.0625"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="37">
+   <objectgroup draworder="index">
+    <object id="1" type="KillPlayer" x="1" y="1">
+     <polygon points="0,0 13,7.0625 -0.125,14"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="38">
+   <objectgroup draworder="index">
+    <object id="1" type="KillPlayer" x="1.125" y="0.9375">
+     <polygon points="0,0 7,12.8125 13.875,0.0625"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="39">
+   <objectgroup draworder="index">
+    <object id="1" type="KillPlayer" x="15" y="1.0625">
+     <polygon points="0,0 -13.0625,6.875 0.0625,14.0625"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="50" terrain=",,,0">
+   <objectgroup draworder="index">
+    <object id="1" type="Terrain" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="51" terrain=",,0,">
+   <objectgroup draworder="index">
+    <object id="1" type="Terrain" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="60" terrain=",0,,">
+   <objectgroup draworder="index">
+    <object id="1" type="Terrain" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="61" terrain="0,,,">
+   <objectgroup draworder="index">
+    <object id="1" type="Terrain" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <tileset firstgid="101" name="RedTestTileSheetxcf" tilewidth="16" tileheight="16" tilecount="100" columns="10">
+  <image source="RedTestTileSheetxcf.png" width="160" height="160"/>
+  <terraintypes>
+   <terrain name="red terrain" tile="-1"/>
+  </terraintypes>
+  <tile id="0" terrain="0,0,0,">
+   <objectgroup draworder="index">
+    <object id="1" type="Terrain" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="1" terrain="0,0,,">
+   <objectgroup draworder="index">
+    <object id="1" type="Terrain" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="2" terrain="0,0,,0">
+   <objectgroup draworder="index">
+    <object id="1" type="Terrain" x="0" y="0.181818" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="10" terrain="0,,0,">
+   <objectgroup draworder="index">
+    <object id="1" type="Terrain" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="11" terrain="0,0,0,0">
+   <objectgroup draworder="index">
+    <object id="1" type="Terrain" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="12" terrain=",0,,0">
+   <objectgroup draworder="index">
+    <object id="1" type="Terrain" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="20" terrain="0,,0,0">
+   <objectgroup draworder="index">
+    <object id="1" type="Terrain" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="21" terrain=",,0,0">
+   <objectgroup draworder="index">
+    <object id="1" type="Terrain" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="22" terrain=",0,0,0">
+   <objectgroup draworder="index">
+    <object id="1" type="Terrain" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="36">
+   <objectgroup draworder="index">
+    <object id="1" type="KillPlayer" x="0.909091" y="14.9091">
+     <polygon points="0,0 7.09091,-12.8182 14.0909,0.0909091"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="37">
+   <objectgroup draworder="index">
+    <object id="1" type="KillPlayer" x="0.909091" y="1">
+     <polygon points="0,0 13.0909,7.09091 0.0909091,13.6364"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="38">
+   <objectgroup draworder="index">
+    <object id="1" type="KillPlayer" x="0.909091" y="0.818182">
+     <polygon points="0,0 7.09091,13.0909 14.0909,0.181818"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="39">
+   <objectgroup draworder="index">
+    <object id="1" type="KillPlayer" x="14.8182" y="1.09091">
+     <polygon points="0,0 -12.8182,6.81818 0,13.8182"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="50" terrain=",,,0">
+   <objectgroup draworder="index">
+    <object id="1" type="Terrain" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="51" terrain=",,0,">
+   <objectgroup draworder="index">
+    <object id="1" type="Terrain" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="60" terrain=",0,,">
+   <objectgroup draworder="index">
+    <object id="1" type="Terrain" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="61" terrain="0,,,">
+   <objectgroup draworder="index">
+    <object id="1" type="Terrain" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <tileset firstgid="201" name="roomgrid" tilewidth="640" tileheight="480" tilecount="1" columns="1">
+  <image source="roomgrid.png" width="640" height="480"/>
+ </tileset>
+ <tileset firstgid="202" name="Collision" tilewidth="16" tileheight="16" spacing="1" tilecount="27" columns="9">
+  <image source="../../FutureShooter/TiledAssets/Collision.png" trans="ffffff" width="164" height="65"/>
+  <tile id="0">
+   <objectgroup draworder="index">
+    <object id="1" type="Terrain" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="1">
+   <objectgroup draworder="index">
+    <object id="1" type="Terrain" x="16" y="0">
+     <polygon points="0,0 -16,0 -16,16"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="2">
+   <objectgroup draworder="index">
+    <object id="2" type="Terrain" x="16" y="16">
+     <polygon points="0,0 -16,0 -16,-16"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="3">
+   <objectgroup draworder="index">
+    <object id="1" type="Terrain" x="0" y="16">
+     <polygon points="0,0 16,-16 16,0"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="4">
+   <objectgroup draworder="index">
+    <object id="1" type="Terrain" x="0" y="0">
+     <polygon points="0,0 16,16 16,0"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="11">
+   <objectgroup draworder="index">
+    <object id="3" type="KillPlayer" x="0" y="0">
+     <polygon points="0,0 16,0 16,7.95652 0.0434783,8"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="12">
+   <objectgroup draworder="index">
+    <object id="1" type="KillPlayer" x="0" y="16">
+     <polygon points="0,0 16,0 15.9565,-8.04348 0,-8.04348"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="13">
+   <objectgroup draworder="index">
+    <object id="1" type="KillPlayer" x="0" y="0">
+     <polygon points="0,0 0,16 8,15.9565 8,-0.0434783"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="14">
+   <objectgroup draworder="index">
+    <object id="1" type="KillPlayer" x="16" y="0">
+     <polygon points="0,0 0,16 -8,16 -8.04348,-0.0869565"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="19">
+   <objectgroup draworder="index">
+    <object id="1" type="GravFlip" x="0" y="14.913">
+     <polygon points="0,0 16.0435,0 16.0435,1.04348 0.0434783,1.08696"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="20">
+   <objectgroup draworder="index">
+    <object id="1" type="GravFlip" x="-0.0434783" y="7.04348">
+     <polygon points="0,0 16.087,-0.0434783 16.1304,1.95652 0.0434783,1.91304"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="21">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0">
+     <polygon points="0,0 16,0 16,16 0,16"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="22">
+   <objectgroup draworder="index">
+    <object id="1" x="6.95652" y="0">
+     <polygon points="0,0 2.04348,0 2,15.9565 0.0869565,15.9565"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="23">
+   <objectgroup draworder="index">
+    <object id="1" type="GravFlip" x="16" y="-0.0869565">
+     <polygon points="0,0 -1.04348,0.0434783 -0.956522,16.1304 -0.0434783,16.087"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="24">
+   <objectgroup draworder="index">
+    <object id="1" type="GravFlip" x="0" y="0">
+     <polygon points="0,0 16,-0.0434783 16,1 0,0.956522"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="25">
+   <objectgroup draworder="index">
+    <object id="1" type="GravFlip" x="0.956522" y="0">
+     <polygon points="0,0 -0.913043,0 -0.869565,16.0435 -0.0434783,16"/>
+    </object>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <layer name="Terrain" width="320" height="240">
+  <data encoding="base64" compression="zlib">
+   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
+  </data>
+ </layer>
+ <layer name="Traps" width="320" height="240">
+  <data encoding="base64" compression="zlib">
+   eJzt3EsKwCAMBUAvY+39T9hlN6UfaGs0M+D+gRDUSEoBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgm9o7AAAAAAAAwMta7wAAAAAAAAAf0AMhuhZo8a4Ie2BfgZksvQMAAADAT57Mt/IGCAAAwMjMeAYAACALd2CAc/7AAADMwx0YAAAAAMagTwvwTC36IAAA7JwNASCOGmQRhx4IAAAAAADAtbV3AAAATvkDA3CfmgnMwpsdkJkaCGSnDgLZHdXB5fcUAABEZr4PAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMSxAUooD/s=
+  </data>
+ </layer>
+ <layer name="Colliders" width="320" height="240" opacity="0.4">
+  <data encoding="base64" compression="zlib">
+   eJztyjENADAMA7DyRxkow7AjUg779h0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbSl/gFUpf4BVKX+AVSl/gFUpf4BVKX+AVSl/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4M8DTy4MQQ==
+  </data>
+ </layer>
+ <layer name="RoomGrid" width="320" height="240">
+  <data encoding="base64" compression="zlib">
+   eJztzkENAEEIBLDz7wxXJ4HHZAMhrYJ+HwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcF1NBxp+Gb+MX2b7DwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAuK+mAw2/jF/GL7P9BwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA3FfTgYZfxi/jl9n+AwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA7qvpQMMv45fxy2z/AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwEs1HWj4Zbb/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4KWaDjT8Mtt/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8FJNBxp+me0/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeKmmAw2/zPbfDxUJJbE=
+  </data>
+ </layer>
+</map>

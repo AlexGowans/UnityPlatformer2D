@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="80" height="60" tilewidth="16" tileheight="16" nextobjectid="22">
+ <tileset firstgid="1" name="sheet" tilewidth="16" tileheight="16" tilecount="576" columns="24">
+  <image source="../Assets/Sprites/sheet.png" trans="ffffff" width="384" height="384"/>
+ </tileset>
+ <tileset firstgid="577" name="Collision" tilewidth="16" tileheight="16" spacing="1" tilecount="27" columns="9">
+  <image source="../../FutureShooter/TiledAssets/Collision.png" trans="ffffff" width="164" height="65"/>
+  <tile id="0">
+   <objectgroup draworder="index">
+    <object id="1" type="Terrain" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="1">
+   <objectgroup draworder="index">
+    <object id="1" type="Terrain" x="16" y="0">
+     <polygon points="0,0 -16,0 -16,16"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="2">
+   <objectgroup draworder="index">
+    <object id="2" type="Terrain" x="16" y="16">
+     <polygon points="0,0 -16,0 -16,-16"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="3">
+   <objectgroup draworder="index">
+    <object id="1" type="Terrain" x="0" y="16">
+     <polygon points="0,0 16,-16 16,0"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="4">
+   <objectgroup draworder="index">
+    <object id="1" type="Terrain" x="0" y="0">
+     <polygon points="0,0 16,16 16,0"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="11">
+   <objectgroup draworder="index">
+    <object id="3" type="KillPlayer" x="0" y="0">
+     <polygon points="0,0 16,0 16,7.95652 0.0434783,8"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="12">
+   <objectgroup draworder="index">
+    <object id="1" type="KillPlayer" x="0" y="16">
+     <polygon points="0,0 16,0 15.9565,-8.04348 0,-8.04348"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="13">
+   <objectgroup draworder="index">
+    <object id="1" type="KillPlayer" x="0" y="0">
+     <polygon points="0,0 0,16 8,15.9565 8,-0.0434783"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="14">
+   <objectgroup draworder="index">
+    <object id="1" type="KillPlayer" x="16" y="0">
+     <polygon points="0,0 0,16 -8,16 -8.04348,-0.0869565"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="19">
+   <objectgroup draworder="index">
+    <object id="1" type="GravFlip" x="0" y="14.913">
+     <polygon points="0,0 16.0435,0 16.0435,1.04348 0.0434783,1.08696"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="20">
+   <objectgroup draworder="index">
+    <object id="1" type="GravFlip" x="-0.0434783" y="7.04348">
+     <polygon points="0,0 16.087,-0.0434783 16.1304,1.95652 0.0434783,1.91304"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="21">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0">
+     <polygon points="0,0 16,0 16,16 0,16"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="22">
+   <objectgroup draworder="index">
+    <object id="1" x="6.95652" y="0">
+     <polygon points="0,0 2.04348,0 2,15.9565 0.0869565,15.9565"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="23">
+   <objectgroup draworder="index">
+    <object id="1" type="GravFlip" x="16" y="-0.0869565">
+     <polygon points="0,0 -1.04348,0.0434783 -0.956522,16.1304 -0.0434783,16.087"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="24">
+   <objectgroup draworder="index">
+    <object id="1" type="GravFlip" x="0" y="0">
+     <polygon points="0,0 16,-0.0434783 16,1 0,0.956522"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="25">
+   <objectgroup draworder="index">
+    <object id="1" type="GravFlip" x="0.956522" y="0">
+     <polygon points="0,0 -0.913043,0 -0.869565,16.0435 -0.0434783,16"/>
+    </object>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <tileset firstgid="604" name="BlueTestTileSheetxcf" tilewidth="16" tileheight="16" tilecount="100" columns="10">
+  <image source="BlueTestTileSheetxcf.png" width="160" height="160"/>
+ </tileset>
+ <layer name="Terrain" width="80" height="60">
+  <data encoding="base64" compression="zlib">
+   eJztm9FuwjAMRRHfOfY4eIR9CHvt/naVqgkJNa6bG8fQniP5raqd0yhNgzkfD4czIcfHGKfA+HyBMUbG1xiRDMHPp2fMzYVof1vigj8J/GngTwN/GvjTwJ8G/jTwp4E/Dfxp4E8Dfxr408CfBv408KeBPw38TdzHMd8K8WP4wN/EnAePD/xN4E8Dfxpb82et5y3i+Z1g+bsa9/le6S96XFZdLeN5jJY/9d5ReTIDf/jbo7+M3p+Ifq0sfxlEzHn84c9LD38161JpXdmjv5Z14U+rC39aXa/mr7Q2ldYfT//77478lciuPzu/Snb92flVsuvPzq+SXX92fpXs+kv5rfPWqPPfyPpb5FqTvzY8+4b/PcfcHFl7tu09o46aj639eeq8GNdGnS3i77381f5/1bOnH4xro85mW3xrzJH9/np38KeBPw38PajpCyjtn/bob8u/f/QAfxr40+jhb2mN9Xyn9+rfyuz3KvlbekZrvt+2HLX+POde0X19mfEHttuzDA==
+  </data>
+ </layer>
+ <layer name="Traps" width="80" height="60">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20LL6AAAAAAAAAAAAAAAAAAAAAAAADgZ0sAAAE=
+  </data>
+ </layer>
+ <layer name="Colliders" width="80" height="60" opacity="0.4">
+  <data encoding="base64" compression="zlib">
+   eJzt2DEOg0AMBVHEzbj/pVJQpIoQmV1/L8xIrm1eJJBy7Nt2OE6DmVn62Vb3e1L6sfRj6cfSj6UfSz+Wfiz9WPqx9GPpx9KPpR9LP5Z+LP1Y+rH0O/v3/3j9zvRj6cfSj/U0v6vnGTEz9yWfq2r000+/dUe/9fwS6cfSj6Ufq8Jv9F2d0o+lH0u/OaXvT++npe9P76el70/vp6XvT++npe+f9V3r8P2r8Ozm1/m3qvK7s7PiHv30+7Wz4p6Un12nH0s/ln7fVnjfdk4/ln4s/VgVfiPcR9/ZdfTL+L15PpU6trQ=
+  </data>
+ </layer>
+</map>
