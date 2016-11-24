@@ -22,6 +22,8 @@
 
     got it to save the array of the item giver as well as the vars for what the player has in the GAME script
 
+    
+
 
 
 */
