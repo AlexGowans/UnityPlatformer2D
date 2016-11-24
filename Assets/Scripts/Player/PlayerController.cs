@@ -4,30 +4,35 @@ using System.Collections;
 [RequireComponent(typeof(Controller2D))]
 [RequireComponent(typeof(InputController))]
 public class PlayerController : MonoBehaviour{
-
+    
+    //Acceleration
     [Range(0,1)]
     public float accelerationTimeAirborne = 0.0f;
     [Range(0,1)]
     public float accelerationTimeGrounded = 0.0f;
 
+    //Allow movement
     [HideInInspector]
     public bool canMove; //For the message box or cutscenes to grab control
 
+    //Speed and Facing
     [Range(0,10)]
     public float moveSpeed = 4;
     float directionFacing;
 
-
+    //Pickup Objects
     public float pickupRange = 30;
     public LayerMask pickupMask;
     public LayerMask obstacleMask;
     GameObject grabbedObject;
 
-
+    //Other
     LevelManager levMan;
     AudioSource sfx;
+
     
-    
+
+    //Gravity flipping
     int gravCharge = 5;
     bool gravCanChange = false;
 
@@ -57,7 +62,7 @@ public class PlayerController : MonoBehaviour{
     public float damage = 10;
     public float BulletSpeed = 6; 
        
-    public float bulletLimitTimer = 3.0f;
+    public float bulletLimitTimer = 2.0f;
     private float bulletLimitTimerHolder = 0;
     Transform FirePoint;
 
@@ -141,10 +146,10 @@ public class PlayerController : MonoBehaviour{
             //repeat for between shots
         if (fireRateHolder > 0) { fireRateHolder -= Time.deltaTime; }
 
-        if (input.ShootButtonPress) { ShootBlaster(); }            
+        if (input.ShootButtonPress) { ShootBlaster(); }
 
         //Gravving
-        GravChange();
+        if (Game.control.gotGravityPack) { GravChange(); }
 	}
 
 

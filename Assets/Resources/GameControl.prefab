@@ -45,6 +45,7 @@ MonoBehaviour:
   savedPosY: 0
   savedPosZ: 0
   savedGravDir: 0
+  savedItemGet: 000000000000000000
   loadingGame: 0
 --- !u!1001 &100100000
 Prefab:

@@ -20,6 +20,8 @@
     23rd
     working on the item giver, cant get it to save to an array
 
+    got it to save the array of the item giver as well as the vars for what the player has in the GAME script
+
 
 
 */

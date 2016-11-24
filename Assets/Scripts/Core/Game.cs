@@ -21,7 +21,16 @@ public class Game : MonoBehaviour {
     [HideInInspector]
     public int savedGravDir;
     [HideInInspector]
-    public bool[] savedItemGet;
+    public bool[] savedItemGet = new bool[9]; //For the towers that give items
+
+    //Items
+    public bool gotGravityPack;
+    public bool gotBlaster;
+    public bool gotGravityGun;
+    public bool gotIceBoots;
+    public bool gotSmashBoots;
+    public bool gotChargeShot;
+
 
     public bool loadingGame = false;
 
@@ -35,6 +44,9 @@ public class Game : MonoBehaviour {
         }
         else if (control != this) {
             Destroy(gameObject);
+        }
+        for (int i = 0; i < savedItemGet.Length; i++) {           
+            savedItemGet[i] = false;
         }
     }
 
@@ -54,7 +66,12 @@ public class Game : MonoBehaviour {
         for (int i = 0; i < savedItemGet.Length; i++) {
             data.savedItemGet[i] = savedItemGet[i];
         }
-
+        data.gotGravityPack = gotGravityPack;
+        data.gotBlaster = gotBlaster;
+        data.gotGravityGun = gotGravityGun;
+        data.gotIceBoots = gotIceBoots;
+        data.gotSmashBoots = gotSmashBoots;
+        data.gotChargeShot = gotChargeShot;
 
         bf.Serialize(file, data);
         file.Close();
@@ -75,10 +92,15 @@ public class Game : MonoBehaviour {
             savedPosY = data.savedPosY;
             savedPosZ = data.savedPosZ;
             savedGravDir = data.savedGravDir;
-            for (int i = 0; i <data.savedItemGet.Length; i++)
-            {
+            for (int i = 0; i < data.savedItemGet.Length; i++) {
                 savedItemGet[i] = data.savedItemGet[i];
             }
+            gotGravityPack = data.gotGravityPack;
+            gotBlaster = data.gotBlaster;
+            gotGravityGun = data.gotGravityGun;
+            gotIceBoots = data.gotIceBoots;
+            gotSmashBoots = data.gotSmashBoots;
+            gotChargeShot = data.gotChargeShot;
 
             loadingGame = true;
 
@@ -96,7 +118,11 @@ public class Game : MonoBehaviour {
     }
 
     public void GotItem(int id) {
-        savedItemGet[id] = true;
+        
+        if (id < savedItemGet.Length) {
+            savedItemGet[id] = true;
+        }
+        
     }
     
 }
@@ -109,5 +135,13 @@ class PlayerData {
 
     public int savedGravDir;
 
-    public bool[] savedItemGet;
+    public bool[] savedItemGet = new bool[9];
+
+    //Items
+    public bool gotGravityPack;
+    public bool gotBlaster;
+    public bool gotGravityGun;
+    public bool gotIceBoots;
+    public bool gotSmashBoots;
+    public bool gotChargeShot;
 }

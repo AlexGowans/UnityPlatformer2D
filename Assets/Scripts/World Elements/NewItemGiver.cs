@@ -25,14 +25,20 @@ public class NewItemGiver : MonoBehaviour {
         itemGiverUsed = Game.control.savedItemGet[myId];
     }
 
-
     void OnTriggerEnter2D(Collider2D col) {
-        if ( col.CompareTag("Player") && !itemGiverUsed ) {
-
+        if (col.CompareTag("Player") && !itemGiverUsed) {
+            
             itemGiverUsed = true;
             Debug.Log("GOT ITEM");
-            Game.control.GotItem(this.myId);
+            Game.control.GotItem(myId);
+
             
+            if (giveGravityPack) { Game.control.gotGravityPack = true; }
+            if (giveBlaster) { Game.control.gotBlaster= true; }
+            if (giveGravityGun) { Game.control.gotGravityGun = true; }
+            if (giveIceBoots) { Game.control.gotIceBoots = true; }
+            if (giveSmashBoots) { Game.control.gotSmashBoots = true; }
+            if (giveChargeShot) { Game.control.gotChargeShot = true; }           
         }
     }
 }
