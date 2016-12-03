@@ -195,7 +195,16 @@ public class PlayerController : MonoBehaviour{
 
 
     public void GravChange(bool ovrd = false) {
-        if ( (input.GravButtonPress == true && gravCanChange == true) || (ovrd == true) ) {
+
+        //Grav Flip Line
+        if (ovrd) {
+            if (controller.gravityDir == 0) { controller.gravityDir = 1; }
+            else { controller.gravityDir = 0; }
+            gravCanChange = false;
+            return;
+        }
+
+        if ( (input.GravButtonPress && gravCanChange) ) {
             sfx.Play();
             if (controller.gravityDir == 0) { controller.gravityDir = 1; }
             else { controller.gravityDir = 0; }
