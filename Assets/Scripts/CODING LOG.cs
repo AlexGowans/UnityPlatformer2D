@@ -31,4 +31,13 @@
     Ok so this is in the branch, gonna be redoing the gravlines into a laser without fucking with the main build, mostly to play
     with git
 
+
+    4/5th Dec
+
+    Working on beam raycast, calculating correct length etc
+
+    7th Dec
+
+    Think i've finished the upward shooting beam, haven't tested it yet though cos sleep
+
 */
