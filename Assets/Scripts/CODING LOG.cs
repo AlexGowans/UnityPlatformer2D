@@ -39,5 +39,18 @@
     7th Dec
 
     Think i've finished the upward shooting beam, haven't tested it yet though cos sleep
+    Ok it's not working
+    But that's tomorrow me's problem
+
+    8th Dec
+
+    Think I found the problem hit.distance wasnt doing what i thought (setting the raylength for the play check to the nearest wall)
+
+    10th Dec
+
+    I got it, re worked it to not use the raycast controller or require a collider, the ray now fires and detects
+    but it detects in the 1000's D=
+
+    it's going into the - cos im not doing the nondetection of the beam correctly
 
 */

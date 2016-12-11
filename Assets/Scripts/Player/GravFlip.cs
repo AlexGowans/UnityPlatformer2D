@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GravFlip : RaycastController {
+public class GravFlip : MonoBehaviour {
 
     
     public bool beamRight;
@@ -9,67 +9,75 @@ public class GravFlip : RaycastController {
     public bool beamUp;
     public bool beamDown;
 
-    public int rayLengthForSizeUp = 10000;
+    public float rayLengthForSizeUp = 100;
 
     int activeBeams = 0;
-    int firstBeamEntered = 0;
+    int startingBeamEntered = 0;
     bool firstBeam;
     bool secondBeam;
 
-    LayerMask wallMask;
-    LayerMask playerMask;
+    public LayerMask wallMask;
+    public LayerMask playerMask;
     
 
     PlayerController playerCon;
 
-    int directionEntered = 0;
-    int directionExited = 0;
 
     // Use this for initialization
-    public override void Start()
+     void Start()
     {
-        base.Start();
         playerCon = FindObjectOfType<PlayerController>();
     }
+
 
     void Update() {
         BeamRaycast(); 
     }
 
-    void BeamRaycast() {
-        Bounds bounds = collider.bounds;
-        activeBeams = 0;
+
+    void BeamRaycast() {     
+        //activeBeams = 0;
         float rayLength;
 
         if (beamUp) {
             //Get size of beams (check for a wall)
-            Vector2 rayOrigin = raycastOrigins.topLeft;
-            rayOrigin.x += bounds.size.x / 2;
-            RaycastHit2D sizeHit = Physics2D.Raycast(rayOrigin, Vector2.up, rayLengthForSizeUp, wallMask);
-            if (sizeHit) { rayLength = sizeHit.distance; }
+            Vector2 rayOrigin = transform.position;                        
+            Debug.DrawRay(rayOrigin, Vector2.up * rayLengthForSizeUp, Color.green,5.0f);
+            RaycastHit2D sizeHit = Physics2D.Raycast(rayOrigin, Vector2.up, rayLengthForSizeUp, wallMask);            
+            if (sizeHit) {
+                rayLength = Vector2.Distance(sizeHit.point, rayOrigin);
+                //Debug.Log(rayLength);
+                //Debug.Log(rayLengthForSizeUp);
+                
+            }
             else {
                 Debug.Log("Laser not finding wall");
                 rayLength = 0;
             }         
-
             for (int i = 0; i < 2; i++) {
-                rayOrigin = (i == 0) ? raycastOrigins.topLeft : raycastOrigins.topRight;
+                rayOrigin.x = (i == 0) ? (rayOrigin.x - 5) : (rayOrigin.x + 5);
                 RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.up, rayLength, playerMask);
-                if (hit) { BeamDetected(i); }
-                else { BeamNotDetected(i); }
+                Debug.DrawRay(rayOrigin, Vector2.up * rayLength, Color.red);
+                if (hit) {
+                    BeamDetected(i);
+                    Debug.Log("Active Beams: " + activeBeams);
+                }
+                else {
+                    BeamNotDetected(i);
+                    Debug.Log("Cant find player: " + i);
+                }
             }
         }
     }
     void BeamDetected(int i) {
         if (i == 0 && !firstBeam) {
             firstBeam = true;
-            if (activeBeams == 0) { firstBeamEntered = 1; }
+            if (activeBeams == 0) { startingBeamEntered = 1; }
             activeBeams++;
-
         }
         if (i == 1 && !secondBeam) {
             secondBeam = true;
-            if (activeBeams == 0) { firstBeamEntered = 2; }
+            if (activeBeams == 0) { startingBeamEntered = 2; }
             activeBeams++;
         }
     }
@@ -77,12 +85,12 @@ public class GravFlip : RaycastController {
         if (i == 0) {
             firstBeam = false;
             activeBeams--;
-            if (activeBeams == 0 && firstBeamEntered == 2) { playerCon.GravChange(true); }
+            if (activeBeams == 0 && startingBeamEntered == 2) { playerCon.GravChange(true); }
         }
         if (i == 1) {
             secondBeam = false;
             activeBeams--;
-            if (activeBeams == 0 && firstBeamEntered == 1) { playerCon.GravChange(true); }
+            if (activeBeams == 0 && startingBeamEntered == 1) { playerCon.GravChange(true); }
         }
     }
 

@@ -727,7 +727,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1, y: 4}
+  m_Size: {x: 4, y: 4}
 --- !u!114 &438231152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -739,6 +739,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d90f2a0f232d61e4ca64ded406775537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 0
+  horizontalRayCount: 0
+  horizontalRaySpacing: 0
+  verticalRayCount: 0
+  verticalRaySpacing: 0
+  collider: {fileID: 0}
+  beamRight: 0
+  beamLeft: 0
+  beamUp: 1
+  beamDown: 0
+  rayLengthForSizeUp: 100
+  wallMask:
+    serializedVersion: 2
+    m_Bits: 512
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!212 &438231153
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -779,8 +798,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 438231150}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 878, y: -758, z: 0}
-  m_LocalScale: {x: 1, y: 96, z: 1}
+  m_LocalPosition: {x: 1373.5, y: -897.6, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
