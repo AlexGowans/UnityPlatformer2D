@@ -22,11 +22,14 @@ public class GravFlip : MonoBehaviour {
 
     PlayerController playerCon;
 
+    LineRenderer lineRenderer;
+
 
     // Use this for initialization
      void Start()
     {
         playerCon = FindObjectOfType<PlayerController>();
+        lineRenderer = GetComponent<LineRenderer>();
     }
 
 
@@ -35,40 +38,48 @@ public class GravFlip : MonoBehaviour {
     }
 
 
-    void BeamRaycast() {     
+    void BeamRaycast() {
         //activeBeams = 0;
-        float rayLength;
+        float rayLength = 0;
 
         if (beamUp) {
-            //Get size of beams (check for a wall)
-            Vector2 rayOrigin = transform.position;                        
-            Debug.DrawRay(rayOrigin, Vector2.up * rayLengthForSizeUp, Color.green,5.0f);
-            RaycastHit2D sizeHit = Physics2D.Raycast(rayOrigin, Vector2.up, rayLengthForSizeUp, wallMask);            
-            if (sizeHit) {
-                rayLength = Vector2.Distance(sizeHit.point, rayOrigin);
-                //Debug.Log(rayLength);
-                //Debug.Log(rayLengthForSizeUp);
-                
+            CreateBeamUpDown(rayLength, 1);
+        }
+        if (beamDown) {
+            CreateBeamUpDown(rayLength, -1);
+        }
+
+       
+    }
+    void CreateBeamUpDown(float rayLength, int dir) {
+        //Get size of beams (check for a wall)
+        Vector2 rayOrigin = transform.position;
+        rayOrigin.y += 8 * dir;
+        Debug.DrawRay(rayOrigin, dir * Vector2.up * rayLengthForSizeUp, Color.green);
+        RaycastHit2D sizeHit = Physics2D.Raycast(rayOrigin, Vector2.up*dir, rayLengthForSizeUp, wallMask);
+        if (sizeHit) {
+            rayLength = Vector2.Distance(sizeHit.point, rayOrigin);
+        }
+        else {
+            Debug.Log("Laser not finding wall");
+            rayLength = 0;
+        }
+        for (int i = 0; i < 2; i++) {
+            if (i == 0) { rayOrigin.x -= 5; }
+            if (i == 1) { rayOrigin.x += 10; } //+10 as +5 only takes it back to Origin                
+            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.up * dir, rayLength, playerMask);
+            Debug.DrawRay(rayOrigin, dir * Vector2.up * rayLength, Color.red);
+            if (hit) {
+                BeamDetected(i);
+                Debug.Log("Active Beams: " + activeBeams);
             }
             else {
-                Debug.Log("Laser not finding wall");
-                rayLength = 0;
-            }         
-            for (int i = 0; i < 2; i++) {
-                rayOrigin.x = (i == 0) ? (rayOrigin.x - 5) : (rayOrigin.x + 5);
-                RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.up, rayLength, playerMask);
-                Debug.DrawRay(rayOrigin, Vector2.up * rayLength, Color.red);
-                if (hit) {
-                    BeamDetected(i);
-                    Debug.Log("Active Beams: " + activeBeams);
-                }
-                else {
-                    BeamNotDetected(i);
-                    Debug.Log("Cant find player: " + i);
-                }
-            }
+                BeamNotDetected(i);
+                Debug.Log("Cant find player: " + i);
+            }            
         }
     }
+    //Beam Detection What do
     void BeamDetected(int i) {
         if (i == 0 && !firstBeam) {
             firstBeam = true;
@@ -82,19 +93,27 @@ public class GravFlip : MonoBehaviour {
         }
     }
     void BeamNotDetected(int i) {
-        if (i == 0) {
+        if (i == 0 && firstBeam) { 
             firstBeam = false;
             activeBeams--;
-            if (activeBeams == 0 && startingBeamEntered == 2) { playerCon.GravChange(true); }
+            if (activeBeams == 1 && startingBeamEntered == 1)
+            {
+                startingBeamEntered = 2;
+                playerCon.GravChange(true);
+            }                       
         }
-        if (i == 1) {
+        if (i == 1 && secondBeam) {
             secondBeam = false;
             activeBeams--;
-            if (activeBeams == 0 && startingBeamEntered == 1) { playerCon.GravChange(true); }
-        }
+            if (activeBeams == 1 && startingBeamEntered == 2)
+            {
+                startingBeamEntered = 1;
+                playerCon.GravChange(true);
+            }
+        }            
     }
 
-
+   
     
 
 

@@ -53,4 +53,8 @@
 
     it's going into the - cos im not doing the nondetection of the beam correctly
 
+    11th Dec
+
+    Seems to work perfect now woo! Had some funny bugs too
+
 */
