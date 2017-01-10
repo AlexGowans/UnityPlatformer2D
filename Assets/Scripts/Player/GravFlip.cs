@@ -38,20 +38,15 @@ public class GravFlip : MonoBehaviour {
     }
 
 
-    void BeamRaycast() {
-        //activeBeams = 0;
-        float rayLength = 0;
-
-        if (beamUp) {
-            CreateBeamUpDown(rayLength, 1);
-        }
-        if (beamDown) {
-            CreateBeamUpDown(rayLength, -1);
-        }
-
-       
+    void BeamRaycast() {      
+        if (beamUp) { CreateBeamUpDown(1);}
+        if (beamDown) { CreateBeamUpDown(-1);}
+        if (beamRight) { CreateBeamLeftRight(1); }
+        if (beamLeft) { CreateBeamLeftRight(-1); }     
     }
-    void CreateBeamUpDown(float rayLength, int dir) {
+    //Creates the beams up and down
+    void CreateBeamUpDown(int dir) {
+        float rayLength;
         //Get size of beams (check for a wall)
         Vector2 rayOrigin = transform.position;
         rayOrigin.y += 8 * dir;
@@ -79,6 +74,27 @@ public class GravFlip : MonoBehaviour {
             }            
         }
     }
+    //Creates the beams left and right
+    void CreateBeamLeftRight(int dir) {
+        float rayLength;
+        bool detected = false;
+        //Get size of beams (check for a wall)
+        Vector2 rayOrigin = transform.position;
+        rayOrigin.x += 8 * dir;
+        Debug.DrawRay(rayOrigin, dir * Vector2.right * rayLengthForSizeUp, Color.green);
+        RaycastHit2D sizeHit = Physics2D.Raycast(rayOrigin, Vector2.right * dir, rayLengthForSizeUp, wallMask);
+        if (sizeHit) {
+            rayLength = Vector2.Distance(sizeHit.point, rayOrigin);
+        }
+        else {
+            Debug.Log("Laser not finding wall");
+            rayLength = 0;
+        }
+        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.right * dir, rayLength, playerMask);
+        if (hit && !detected) { playerCon.GravChange(true); detected = true; }
+        else if (!hit) { detected = false; }
+    }
+
     //Beam Detection What do
     void BeamDetected(int i) {
         if (i == 0 && !firstBeam) {
@@ -96,8 +112,7 @@ public class GravFlip : MonoBehaviour {
         if (i == 0 && firstBeam) { 
             firstBeam = false;
             activeBeams--;
-            if (activeBeams == 1 && startingBeamEntered == 1)
-            {
+            if (activeBeams == 1 && startingBeamEntered == 1) {
                 startingBeamEntered = 2;
                 playerCon.GravChange(true);
             }                       
@@ -105,16 +120,15 @@ public class GravFlip : MonoBehaviour {
         if (i == 1 && secondBeam) {
             secondBeam = false;
             activeBeams--;
-            if (activeBeams == 1 && startingBeamEntered == 2)
-            {
+            if (activeBeams == 1 && startingBeamEntered == 2) {
                 startingBeamEntered = 1;
                 playerCon.GravChange(true);
             }
         }            
     }
-
-   
     
+    //Line Rendering
+    void renderLines(Vector3 beamEnd) { }   
 
 
 }

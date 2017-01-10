@@ -57,4 +57,24 @@
 
     Seems to work perfect now woo! Had some funny bugs too
 
+    13th Dec
+
+    Made it work with up / down and offset the origin slightly, still don't use both at once, it gets weird
+    as they detect separately
+
+    14th Dec
+
+    Trying to get Left/Right beams working
+
+    21st Dec
+
+    Actually did this a few days ago but left right beams are working. Maybe should start taking some vit d to keep my senses up
+
+    28th Dec
+
+    Ended up taking the time around xmas chilling getting onto rendering the beams now
+
+    Jan 9th
+
+    Ok back to it after xmas, gonna get the line renderer going and merge back into master
 */
